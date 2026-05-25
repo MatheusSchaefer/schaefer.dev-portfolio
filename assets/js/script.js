@@ -18,7 +18,14 @@ function desenharMatrix() {
   ctx.fillStyle = "rgba(0, 0, 0, 0.08)";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-  ctx.fillStyle = "#00ff41";
+const colors = [
+    "rgba(0,255,102,0.5)",
+    "rgba(0,255,255,0.5)",
+    "rgba(255,0,255,0.5)",
+    "rgba(0,153,255,0.5)"
+];
+
+ctx.fillStyle = colors[Math.floor(Math.random() * colors.length)];
   ctx.font = fontSize + "px monospace";
 
   for (let i = 0; i < gotas.length; i++) {
