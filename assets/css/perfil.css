@@ -63,6 +63,43 @@ body {
   font-family: monospace;
 }
 
+.logo{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.perfil-img{
+  width: 60px;
+  height: 60px;
+
+  border-radius: 50%;
+  object-fit: cover;
+
+  border: 2px solid #00ff66;
+
+  box-shadow: 0 0 15px #00ff66;
+
+}
+
+.perfil-img{
+  transition: 0.3s ease;
+}
+
+.perfil-img:hover{
+  transform: scale(1.08);
+  box-shadow: 0 0 25px #00ff66;
+}
+
+.logo h1{
+  margin: 0;
+}
+
+.logo span{
+  letter-spacing: 5px;
+  font-size: 12px;
+}
+
 .menu {
   display: flex;
   gap: 45px;
@@ -92,4 +129,29 @@ body {
   left: 0;
   bottom: -10px;
   box-shadow: 0 0 10px #66ff66;
+}
+
+@media (max-width: 768px) {
+
+  .topo {
+    flex-direction: column;
+    height: auto;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .menu {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .menu a {
+    font-size: 12px;
+  }
+
+  .logo {
+    text-align: center;
+  }
+
 }
