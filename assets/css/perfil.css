@@ -237,24 +237,38 @@ body {
 }
 
 .bat {
-    width: 1px;
-    height: 1px;
-    transform: scale(4);
     position: relative;
-    left: -128px;
-    top: -128px;
-    animation: 0.4s bat steps(1) infinite;
+    width: 40px;
+    height: 20px;
 }
 
-@keyframes bat {
-    0% {
-        /* posição das asas abertas */
+.bat::before,
+.bat::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 10px;
+    border: 3px solid #00ff66;
+    border-bottom: none;
+    border-radius: 20px 20px 0 0;
+    transform-origin: bottom center;
+    animation: flap 0.4s infinite alternate;
+}
+
+.bat::before {
+    left: 0;
+}
+
+.bat::after {
+    right: 0;
+}
+
+@keyframes flap {
+    from {
+        transform: rotate(-20deg);
     }
-    50% {
-        /* posição das asas fechadas */
-    }
-    100% {
-        /* volta para asas abertas */
+    to {
+        transform: rotate(20deg);
     }
 }
 
